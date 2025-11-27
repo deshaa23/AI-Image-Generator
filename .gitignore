@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+outputs/
+*.ckpt
+*.bin
+*.pth
+.DS_Store

@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Top-left logo styling */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 60px;   /* Adjust as needed */
+    width: auto;
+    filter: drop-shadow(0 0 10px rgba(102, 126, 234, 0.5));
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 45px;
+    }
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #0a0e27;
+    min-height: 100vh;
+    padding: 20px;
+    color: #e0e0e0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        url('https://picsum.photos/150/150?random=1'),
+        url('https://picsum.photos/150/150?random=2'),
+        url('https://picsum.photos/150/150?random=3'),
+        url('https://picsum.photos/150/150?random=4'),
+        url('https://picsum.photos/150/150?random=5'),
+        url('https://picsum.photos/150/150?random=6'),
+        url('https://picsum.photos/150/150?random=7'),
+        url('https://picsum.photos/150/150?random=8'),
+        url('https://picsum.photos/150/150?random=9'),
+        url('https://picsum.photos/150/150?random=10'),
+        url('https://picsum.photos/150/150?random=11'),
+        url('https://picsum.photos/150/150?random=12'),
+        url('https://picsum.photos/150/150?random=13'),
+        url('https://picsum.photos/150/150?random=14'),
+        url('https://picsum.photos/150/150?random=15'),
+        url('https://picsum.photos/150/150?random=16'),
+        url('https://picsum.photos/150/150?random=17'),
+        url('https://picsum.photos/150/150?random=18'),
+        url('https://picsum.photos/150/150?random=19'),
+        url('https://picsum.photos/150/150?random=20'),
+        url('https://picsum.photos/150/150?random=21'),
+        url('https://picsum.photos/150/150?random=22'),
+        url('https://picsum.photos/150/150?random=23'),
+        url('https://picsum.photos/150/150?random=24'),
+        url('https://picsum.photos/150/150?random=25'),
+        url('https://picsum.photos/150/150?random=26'),
+        url('https://picsum.photos/150/150?random=27'),
+        url('https://picsum.photos/150/150?random=28'),
+        url('https://picsum.photos/150/150?random=29'),
+        url('https://picsum.photos/150/150?random=30'),
+        url('https://picsum.photos/150/150?random=31'),
+        url('https://picsum.photos/150/150?random=32'),
+        url('https://picsum.photos/150/150?random=33'),
+        url('https://picsum.photos/150/150?random=34'),
+        url('https://picsum.photos/150/150?random=35'),
+        url('https://picsum.photos/150/150?random=36'),
+        url('https://picsum.photos/150/150?random=37'),
+        url('https://picsum.photos/150/150?random=38'),
+        url('https://picsum.photos/150/150?random=39'),
+        url('https://picsum.photos/150/150?random=40');
+    background-size: 150px 150px;
+            background-position: 
+                
+                5% 15%, 25% 35%, 45% 55%, 65% 75%, 85% 95%,
+                0% 10%, 20% 30%, 40% 50%, 60% 70%, 80% 90%,
+                50% 35%, 65% 32%, 80% 38%, 95% 30%, 10% 50%,
+                25% 55%, 40% 52%, 55% 58%, 70% 54%, 85% 60%;
+            background-repeat: no-repeat;
+            opacity: 0;
+            z-index: 0;
+            pointer-events: none;
+            animation: floatImages 60s ease-in-out infinite;
+}
+
+@keyframes floatImages {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.header h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff, #00d2d3);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowShift 3s ease infinite, glow 2s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.5));
+}
+
+@keyframes rainbowShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.5)); }
+    to { filter: drop-shadow(0 0 30px rgba(72, 219, 251, 0.8)); }
+}
+
+.header p {
+    font-size: 1.3em;
+    color: #a0aec0;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.control-panel {
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.control-panel h2 {
+    background: linear-gradient(90deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff, #00d2d3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 15px;
+    background: rgba(30, 41, 59, 0.6);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 12px;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    min-height: 120px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #64748b;
+}
+
+.generate-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.generate-btn:hover {
+    transform: translateY(-3px);
+}
+
+.gallery {
+    background: rgba(17, 24, 39, 0.8);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 25px;
+    padding: 30px;
+    backdrop-filter: blur(20px);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.image-card {
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.image-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.warning {
+    font-size: 0.9em;
+    color: #ff6b6b;
+    margin-top: 10px;
+    text-align: center;
+    opacity: 0.9;
+}

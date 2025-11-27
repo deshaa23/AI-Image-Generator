@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>AI Image Generator ✨</title>
+</head>
+<body>
+    <div class="logo">
+    <img src="{{ url_for('static', filename='newlogo.png') }}" class="logo" alt="Talrn Logo">
+
+</div>
+
+    <div class="container">
+        <div class="header">
+            <h1>✨ AI Image Generator</h1>
+            <p>Transform your imagination into stunning visuals</p>
+        </div>
+
+        <div class="main-content">
+            <div class="control-panel">
+                <h2>Create</h2>
+                
+                <div class="form-group">
+                    <label>Your Prompt</label>
+                    <textarea id="promptInput" placeholder="e.g., a futuristic city at sunset with flying cars..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Negative Prompt (Optional)</label>
+                    <input type="text" id="negativePrompt" placeholder="e.g., blurry, low quality, distorted">
+                </div>
+
+                <div class="form-group">
+                    <label>Style</label>
+                    <select id="styleSelect">
+                        <option value="photorealistic">📷 Photorealistic</option>
+                        <option value="artistic">🎨 Artistic</option>
+                        <option value="cartoon">🎭 Cartoon</option>
+                        <option value="anime">🌸 Anime</option>
+                        <option value="3d">🎲 3D Render</option>
+                        <option value="oil-painting">🖼️ Oil Painting</option>
+                        <option value="watercolor">💧 Watercolor</option>
+                        <option value="cyberpunk">🤖 Cyberpunk</option>
+                    </select>
+                </div>
+
+                <div class="slider-group">
+                    <label>
+                        <span>Number of Images</span>
+                        <span id="numImagesValue">1</span>
+                    </label>
+                    <input type="range" id="numImages" min="1" max="4" value="1" oninput="document.getElementById('numImagesValue').textContent = this.value">
+                </div>
+
+                <button class="generate-btn" onclick="generateImages()">
+                    Generate Images
+                </button>
+
+                <p class="warning">⚠ Please avoid generating harmful or inappropriate content.</p>
+
+            </div>
+
+            <div class="gallery">
+                <h2>Gallery</h2>
+
+                <div class="loading-state" id="loadingState">
+                    <div class="spinner"></div>
+                    <h3>Creating your masterpiece...</h3>
+                    <p>This may take 30-60 seconds</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="empty-state" id="emptyState">
+                    <h3>No images yet</h3>
+                    <p>Start creating by entering a prompt and clicking generate!</p>
+                </div>
+
+                <div class="image-grid" id="imageGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
